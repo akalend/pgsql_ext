@@ -3,5 +3,9 @@
 /usr/local/pgsql/bin/createdb test
 # /usr/local/pgsql/bin/psql test
 /usr/local/pgsql/bin/psql -d test -a -f /src/testfunction--1.0.sql 
-/usr/local/pgsql/bin/psql test
-
+# /usr/local/pgsql/bin/psql test
+# /bin/bash
+while :
+do
+sleep 30
+done

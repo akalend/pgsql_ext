@@ -39,3 +39,28 @@ Return count rows with repeaten by number row till n.
 	(5 rows)
 
 	test=# 
+
+## RESULT
+
+	$psql -h 172.17.0.2 -p 5432 -U postgres test
+	psql (12.9 (Ubuntu 12.9-0ubuntu0.20.04.1), server 14.1)
+	WARNING: psql major version 12, server major version 14.
+	         Some psql features might not work.
+	Type "help" for help.
+
+	test=# SELECT testfunction(3,'Z')l
+	test-# ;
+	    l    
+	---------
+	 (1,Z)
+	 (2,ZZ)
+	 (3,ZZZ)
+	(3 rows)
+
+	test=# 
+
+
+Check docker host IP:
+
+	 docker inspect pgsql | grep \"IPAddress | awk '{print $2}' 
+	"172.17.0.2",
