@@ -8,12 +8,26 @@ the funnction in parameters:
 
 Return count rows with repeaten by number row till n. 
 
-## BUILD
+
+## ONLY BUILD
+
+	docker build -t pgsql .
+	docker run --rm -d --name  pgsql  -p 0.0.0.0:5432:5432 pgsql 
+
+check IP address in the next console
+
+	docker inspect pgsql | grep \"IPAddress | awk '{print $2}' 
+
+and start test
+ 
+	psql -h 172.17.0.2 -p 5432 -U postgres  -f test.sql test
+
+or You can make run only one script
 
 	Start the script start.sh
 
 
-## INSTALLATION:
+## SQL INSTALLATION:
 
 	CREATE EXTENSION testfunction;
 	CREATE  TYPE __testfunction AS (f1 integer, f2 varchar);
